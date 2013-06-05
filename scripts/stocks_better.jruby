@@ -1,0 +1,34 @@
+puts "\nExecuting #{__FILE__} @ #{Time.new}\n"
+
+start().with { |s|
+    s.buyOrders =
+        [
+            buy().with { |b|
+              b.symbol = 'goog'
+              b.limit = 625.0
+              b.qty = 300
+              b.goodFor = '60 days'
+            },
+
+            buy().with { |b|
+              b.symbol = 'aapl'
+              b.market = -1
+              b.qty = 20
+              b.goodFor = 'eod'
+            }
+        ]
+
+    s.sellOrders =
+        [
+              sell().with { |e|
+                e.symbol = 'tsla'
+                e.stopLimit = '98.5 97.0'
+                e.qty = 500
+                e.goodFor = '7 days'
+              }
+        ]
+
+    s.watch = ['Vanguard dividend ETFs', 'Corporate bond and senior loan ETFs']
+
+    s.notes = "   Commission is 9.99\n   Also note, blah.. blah\n   Cell (only if urgent): 555-444-1234"
+}

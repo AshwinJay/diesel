@@ -1,0 +1,36 @@
+require 'java'
+
+puts "\nExecuting #{__FILE__} @ #{Time.new}\n"
+
+@stocks = Java::com.javaforu.dsl.stocks.bean.Stocks.new
+
+@buy1 = Java::com.javaforu.dsl.stocks.bean.Stocks::Buy.new
+@buy1.symbol = 'goog'
+@buy1.limit = 625.0
+@buy1.qty = 300
+@buy1.goodFor = '60 days'
+
+@buy2 = Java::com.javaforu.dsl.stocks.bean.Stocks::Buy.new
+@buy2.symbol = 'aapl'
+@buy2.market = -1
+@buy2.qty = 20
+@buy2.goodFor = 'eod'
+
+@stocks.buyOrders = [@buy1, @buy2]
+
+@sell = Java::com.javaforu.dsl.stocks.bean.Stocks::Sell.new
+@sell.symbol = 'tsla'
+@sell.stopLimit = '98.5 97.0'
+@sell.qty = 500
+@sell.goodFor = '7 days'
+
+@stocks.sellOrders = [@sell]
+
+@stocks.notes =
+  '   Commission is 9.99
+   Also note, blah.. blah
+   Cell (only if urgent): 555-444-1234'
+
+@stocks.watch = ['Vanguard dividend ETFs', 'Corporate bond and senior loan ETFs']
+
+@stocks

@@ -1,0 +1,25 @@
+orders:
+    - buy:
+        symbol: goog
+        limit: 625.0
+        qty: 300
+        good for: 60 days
+    - sell:
+        symbol: tsla
+        stop limit: 98.5 97.0
+        qty: 500
+        good for: 7 days
+    - buy:
+        symbol: aapl
+        market: -1
+        qty: 20
+        good for: eod
+
+notes: |
+    Commission is 9.99
+    Also note, blah.. blah
+    Cell (only if urgent): 555-444-1234
+
+watch:
+    - Vanguard dividend ETFs
+    - Corporate bond and senior loan ETFs

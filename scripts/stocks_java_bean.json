@@ -1,0 +1,35 @@
+{
+  "buyOrders": [
+    {
+      "symbol": "goog",
+      "qty": 300.0,
+      "limit": 625.0,
+      "stopLimit": null,
+      "market": null,
+      "goodFor": "60 days"
+    },
+    {
+      "symbol": "aapl",
+      "qty": 20.0,
+      "limit": null,
+      "stopLimit": null,
+      "market": -1.0,
+      "goodFor": "eod"
+    }
+  ],
+  "sellOrders": [
+    {
+      "symbol": "tsla",
+      "qty": 500.0,
+      "limit": null,
+      "stopLimit": "98.5 97.0",
+      "market": null,
+      "goodFor": "7 days"
+    }
+  ],
+  "watch": [
+    "Vanguard dividend ETFs",
+    "Corporate bond and senior loan ETFs"
+  ],
+  "notes": "Commission is 9.99\nAlso note, blah.. blah\nCell (only if urgent): 555-444-1234\n"
+}

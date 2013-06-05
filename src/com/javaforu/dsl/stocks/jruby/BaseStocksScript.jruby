@@ -1,0 +1,28 @@
+require 'java'
+
+puts "\nExecuting #{__FILE__} @ #{Time.new}\n"
+
+module WithBlock
+    def with(&block)
+        instance_eval &block
+        return self
+    end
+end
+
+class JStocks < Java::com.javaforu.dsl.stocks.bean.Stocks
+    include WithBlock
+end
+
+class JBuy < Java::com.javaforu.dsl.stocks.bean.Stocks::Buy
+    include WithBlock
+end
+
+class JSell < Java::com.javaforu.dsl.stocks.bean.Stocks::Sell
+    include WithBlock
+end
+
+def start() return JStocks.new end
+
+def buy() return JBuy.new end
+
+def sell() return JSell.new end
